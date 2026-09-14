@@ -1,0 +1,39 @@
+{
+  "name": "explorer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal package configuration for explorer project",
+  "scripts": {
+    "audit": "pnpm audit --audit-level high",
+    "audit:ci": "pnpm audit --prod --audit-level critical",
+    "audit:prod": "pnpm audit --prod --audit-level high",
+    "build": "pnpm build:packages && next build",
+    "build:packages": "pnpm -r --filter './packages/**' run build",
+    "dev": "pnpm build:packages && next dev",
+    "start": "next start",
+    "test": "pnpm test:ci",
+    "format": "prettier --config .prettierrc.cjs --write",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "next": "16.3.3",
+    "@solana/web3.js": "1.98.4",
+    "@solana/kit": "7.0.0",
+    "jotai": "2.15.1",
+    "swr": "2.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@types/node": "22.15.3",
+    "typescript": "5.0.0",
+    "eslint": "9.0.0",
+    "prettier": "3.0.0"
+  },
+  "packageManager": "pnpm@10.17.1",
+  "engines": {
+    "node": "^22"
+  }
+}
